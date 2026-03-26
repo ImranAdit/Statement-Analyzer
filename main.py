@@ -1,10 +1,7 @@
-from flask import Flask, send_file
+from fastapi import FastAPI
 
-app = Flask(__name__)
+app = FastAPI()
 
-@app.route("/")
+@app.get("/")
 def home():
-    return send_file("index.html")
-
-if __name__ == "__main__":
-    app.run(host="0.0.0.0", port=8000)
+    return {"message": "Statement Analyzer running"}
